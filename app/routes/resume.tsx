@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
-import Ats from '~/components/ATS';
+import ATS from '~/components/ATS';
 import Details from '~/components/Details';
 import Summary from '~/components/Summary';
 import { usePuterStore } from '~/lib/puter';
@@ -76,9 +76,9 @@ const Resume = () => {
           <h2 className='text-4xl text-black font-bold'>Resume Review</h2>
           {feedback ? (
             <div className='flex flex-col gap-8 animate-in fade-in duration-1000'>
-                {/* <Summary feedback={feedback} />
-                <Ats score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
-                <Details feedback={feedback} /> */}
+                <Summary feedback={feedback} />
+                <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
+                <Details feedback={feedback} />
             </div>
           ) : (
             <img src='/images/resume-scan-2.gif' alt='resume scan' className='w-full' />
